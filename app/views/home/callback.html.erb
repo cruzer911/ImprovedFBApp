@@ -3,10 +3,14 @@
 <ul>
 	<b>Comments:</b><br /> <hr>
 	<ul>	
-	<! <%= @graph_status_list[0]["comments"]["data"][0]["message"]%>>	
-	<! Picking out the latest status' comments>
-	<% @graph_status_list[0]["comments"]["data"].each do |comment| %>
-	<%= comment["message"] %> ...............From : <%= comment["from"]["name"]%> | Date : <i><%= comment["created_time"]%></i><hr> 
-	<% end %>
+	<%begin%>	
+		<! <%= @graph_status_list[0]["comments"]["data"][0]["message"]%>>	
+		<! Picking out the latest status' comments>
+		<% @graph_status_list[0]["comments"]["data"].each do |comment| %>
+		<%= comment["message"] %> ...............From : <%= comment["from"]["name"]%> | Date : <i><%= comment["created_time"]%></i><hr> 
+		<% end %>
+	<%rescue Exception => e%>
+		<%puts e.message%>
+	<%end%>		
 	</ul>
 </ul>
