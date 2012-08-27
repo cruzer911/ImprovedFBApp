@@ -1,0 +1,6 @@
+FB Comment Display App
+-Akshay Kumar
+aarya598@gmail.com
+
+A toy app displaying the comments posted on a status update on my facebook page. Comments are updated every 1 min.Uses the Koala 
+FB Gem for rails.
